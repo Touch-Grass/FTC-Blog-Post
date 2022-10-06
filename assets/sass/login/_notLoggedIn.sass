@@ -1,14 +1,18 @@
 @use '../mixins/flex' as *
 @use '../misc/vars' as *
+@use '../misc/button' as *
 .not_logged_in
-    min-height: 100vh
+    min-height: calc(100vh - 5rem)
+    @include flex($direction: column)
+    gap: 1rem
 
     button
-        background-color: $primary
-        border-radius: 5px
-        transition: 250ms
+        @extend .template_btn
 
         &:hover
             background-color: $primary-shade
 
-    @include flex()
+    input
+        background-color: $bg-shade
+        padding: 0.25rem 0.5rem
+        border-radius: 5px

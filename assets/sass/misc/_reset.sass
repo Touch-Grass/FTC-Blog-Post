@@ -1,14 +1,12 @@
+@use '../misc/vars' as *
 *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *))
     all: unset
     display: revert
 
-*
-*::before
+*,
+*::before,
 *::after
     box-sizing: border-box
-
-a, button
-    cursor: pointer
 
 ol, ul, menu
     list-style: none
@@ -28,6 +26,9 @@ textarea
 meter
     -webkit-appearance: revert
     appearance: revert
+
+body
+    font-family: $font
 
 ::placeholder
     color: unset

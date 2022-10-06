@@ -5,20 +5,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script defer src="dist/js/script.js"></script>
+    <title>Blog Generator</title>
+    <script defer type="module" src="dist/js/script.js"></script>
     <link rel="stylesheet" href="dist/css/main.css">
 </head>
 
 <body>
 
-    <section id="not_logged_in">
-        <div class="not_logged_in">
-            <h1>Not Logged In </h1>
-            <button>Login</button>
+    <nav>
+        <div class="navbar">
+
+            <div class="navbar-left">
+                <p class="navbar-username"></p>
+            </div>
+
+            <div class="navbar-right">
+                <button class="navbar-sign_out_btn">Sign Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="not_logged_in">
+        <h1>Not Logged In </h1>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button>Login</button>
+    </section>
+
+    <section class="logged_in">
+        <div class="post_form_wrapper">
+            <form method="post" class="add_blog_form">
+                <div class="input_wrapper">
+                    <input class="title_input" type="text" name="title" placeholder="Post Title">
+                </div>
+                <div>
+                    <textarea name="content" class="blog_content" rows="20" placeholder=" Content"></textarea>
+                </div>
+                <div>
+                    <button class="add_blog_btn" type="submit">Add Blog</button>
+                </div>
+            </form>
         </div>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/8.1.1/cash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,44 @@
+@use '../misc/vars' as *
+@use '../mixins/flex' as *
+@use '../misc/button' as *
+
+.logged_in
+    display: none
+
+.post_form_wrapper
+    @include flex($direction: column)
+    min-height: calc(100vh - 5rem)
+    background-color: $bg
+
+    form
+        width: 80vw
+        max-width: $large
+
+    .input_wrapper
+        margin-bottom: 2rem
+        border-radius: 0.25rem
+        background-color: $bg-tint
+
+        .title_input
+            padding: 1rem
+            background-color: $bg-tint
+            color: $text-tint
+
+            &::placeholder
+                color: $text-tint
+
+    .blog_content
+        flex: 1
+        padding: 1rem
+        width: 100%
+        height: 100%
+        border-radius: 0.25rem
+        background-color: $bg-tint
+        color: $text-tint
+
+        &::placeholder
+            color: $text-tint
+
+    .add_blog_btn
+        @extend .template_btn
+        margin-top: 1rem

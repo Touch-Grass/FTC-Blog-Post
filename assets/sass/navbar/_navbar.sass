@@ -1,0 +1,27 @@
+@use '../misc/vars' as *
+@use '../mixins/flex' as *
+@use '../misc/button' as *
+
+.navbar
+    @include flex($justify: flex-end)
+    width: 100vw
+    height: 5rem
+
+    &-left
+        margin-right: auto
+        margin-left: 1rem
+
+    &-sign_out_btn
+        @extend .template_btn
+        margin-right: 1rem
+        color: $text
+        transition: background-color 0.2s, color 0.2s ease-in-out
+
+        &.grayedOut
+            background-color: $bg-shade
+            cursor: not-allowed
+            color: $text-tint
+
+        &:hover:not(.grayedOut)
+            background-color: $primary-shade
+            color: $text-inv
