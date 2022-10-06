@@ -14,7 +14,7 @@ export const handleSignOut = () => {
   //     throw new Error(e);
   //   });
 
-  notLoggedIn.css('display', 'block');
+  notLoggedIn.css('display', 'flex');
   loggedIn.css('display', 'none');
   signOutBtn.addClass('grayedOut');
 };

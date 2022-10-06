@@ -20,16 +20,18 @@
             </div>
 
             <div class="navbar-right">
-                <button class="navbar-sign_out_btn">Sign Out</button>
+                <button class="navbar-sign_out_btn grayedOut">Sign Out</button>
             </div>
         </div>
     </nav>
 
     <section class="not_logged_in">
         <h1>Not Logged In </h1>
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <button>Login</button>
+        <form class="login_form" method="post">
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button class="login_btn" type="submit">Login</button>
+        </form>
     </section>
 
     <section class="logged_in">

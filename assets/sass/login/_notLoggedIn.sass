@@ -6,6 +6,10 @@
     @include flex($direction: column)
     gap: 1rem
 
+    form
+        @extend .not_logged_in
+        min-height: 0
+
     button
         @extend .template_btn
 

@@ -6,13 +6,16 @@
   transition: 250ms;
 }
 
-.not_logged_in {
+.not_logged_in, .not_logged_in form {
   min-height: calc(100vh - 5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+.not_logged_in form {
+  min-height: 0;
 }
 .not_logged_in button:hover {
   background-color: #096788;
