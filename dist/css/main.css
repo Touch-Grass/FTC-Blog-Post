@@ -1,0 +1,85 @@
+.not_logged_in {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.not_logged_in button {
+  background-color: #0ca6d1;
+  border-radius: 5px;
+  transition: 250ms;
+}
+.not_logged_in button:hover {
+  background-color: #096788;
+}
+
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+*::after {
+  box-sizing: border-box;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+ol, ul, menu {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input, textarea {
+  -webkit-user-select: auto;
+}
+
+textarea {
+  white-space: revert;
+}
+
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+
+::-moz-placeholder {
+  color: unset;
+  display: none;
+}
+
+:-ms-input-placeholder {
+  color: unset;
+  display: none;
+}
+
+::placeholder {
+  color: unset;
+  display: none;
+}
+
+:where([hidden]) {
+  display: none;
+}
+
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}/*# sourceMappingURL=main.css.map */
