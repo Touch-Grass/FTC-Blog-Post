@@ -1,7 +1,8 @@
 import { handleSignOut } from './signOut.js';
-import { handleSignIn } from './signIn.js';
+import { handleSignIn, bypassSignIn } from './signIn.js';
 import { initNavbar } from './initNavbar.js';
 $(() => {
+  console.log('script.js loaded');
   initNavbar();
   const form = $('.add_blog_form');
   const button = $('.add_blog_button');
@@ -31,5 +32,10 @@ $(() => {
   loginForm.on('submit', e => {
     e.preventDefault();
     handleSignIn();
+  });
+
+  $(document).on('click', () => {
+    console.log('Hi');
+    // bypassSignIn();
   });
 });
