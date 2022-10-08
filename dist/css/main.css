@@ -26,10 +26,6 @@
   border-radius: 5px;
 }
 
-.logged_in {
-  display: none;
-}
-
 .post_form_wrapper {
   display: flex;
   flex-direction: column;

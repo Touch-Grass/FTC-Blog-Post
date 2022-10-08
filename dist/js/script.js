@@ -8,6 +8,7 @@ $(() => {
   const button = $('.add_blog_button');
   const signOut = $('.navbar-sign_out_btn');
   const loginForm = $('.login_form');
+  const loginBtn = $('.login_btn');
   // Firebase logic
   button.on('click', e => {
     try {
@@ -34,8 +35,7 @@ $(() => {
     handleSignIn();
   });
 
-  $(document).on('click', () => {
-    console.log('Hi');
-    // bypassSignIn();
+  loginBtn.on('click', () => {
+    bypassSignIn();
   });
 });
