@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Generator</title>
-    <script defer type="module" src="dist/js/script.js"></script>
     <link rel="stylesheet" href="dist/css/main.css">
 </head>
 
@@ -36,7 +35,7 @@
 
     <section class="logged_in">
         <div class="post_form_wrapper">
-            <form method="post" class="add_blog_form">
+            <form class="add_blog_form">
                 <div class="input_wrapper">
                     <input class="title_input" type="text" name="title" placeholder="Post Title">
                 </div>
@@ -44,7 +43,7 @@
                     <textarea name="content" class="blog_content" rows="20" placeholder=" Content"></textarea>
                 </div>
                 <div>
-                    <button class="add_blog_btn" type="submit">Add Blog</button>
+                    <button class="add_blog_btn" type="button">Add Blog</button>
                 </div>
             </form>
         </div>
@@ -52,6 +51,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/8.1.1/cash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        console.log("Hello World");
+    </script>
+    <script type="module" src="./../dist/js/script.js"></script>
 </body>
 
 </html>
