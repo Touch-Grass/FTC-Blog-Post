@@ -1,22 +1,29 @@
 import { handleSignOut } from './signOut.js';
 import { handleSignIn, bypassSignIn } from './signIn.js';
 import { initNavbar } from './initNavbar.js';
+import { db } from './firebase.js';
 $(() => {
-  console.log('script.js loaded');
   initNavbar();
   const form = $('.add_blog_form');
-  const button = $('.add_blog_button');
+  const button = $('.add_blog_btn');
   const signOut = $('.navbar-sign_out_btn');
   const loginForm = $('.login_form');
   const loginBtn = $('.login_btn');
+
   // Firebase logic
-  button.on('click', e => {
-    try {
-      // Todo: send to firebase, then return message.
-    } catch (e) {
-      alert(e);
-      throw new Error(e);
-    }
+  button.on('click', () => {
+    console.log('CLICKED');
+    const data = {
+      title: $('.title_input').val(),
+      description: $('.blog_content').val(),
+      time: new Date().toLocaleString(),
+    };
+
+    console.log(data.title, data.description, data.content);
+
+    const postsRef = ref(db, 'posts');
+    const newPostRef = push(postsRef);
+    set(newPostRef, data);
   });
 
   // Form submiting

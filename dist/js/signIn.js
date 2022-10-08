@@ -1,4 +1,4 @@
-import { initNavbar } from './initNavbar';
+import { initNavbar } from './initNavbar.js';
 export const handleSignIn = () => {
   console.log('Sign in');
   // Todo: Add firebase signing in an error catching.

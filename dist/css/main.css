@@ -78,6 +78,9 @@
 .post_form_wrapper .add_blog_btn {
   margin-top: 1rem;
 }
+.post_form_wrapper .add_blog_btn:active {
+  transform: scale(1.2) !important;
+}
 
 .navbar {
   display: flex;
