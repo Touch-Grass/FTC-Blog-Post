@@ -2,6 +2,7 @@ import { handleSignOut } from './signOut.js';
 import { handleSignIn, bypassSignIn } from './signIn.js';
 import { initNavbar } from './initNavbar.js';
 import { db } from './firebase.js';
+import { ref, set, push } from 'https://www.gstatic.com/firebasejs/9.11.0/firebase-database.js';
 $(() => {
   initNavbar();
   const form = $('.add_blog_form');
