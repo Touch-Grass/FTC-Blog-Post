@@ -1,11 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.11.0/firebase-analytics.js';
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-} from 'https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js';
+import { getAuth } from 'https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js';
 import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.11.0/firebase-database.js';
 
 const firebaseConfig = {
@@ -23,6 +18,4 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 export const db = getDatabase();
-export const auth = getAuth();
-export const signIn = signInWithEmailAndPassword;
-export const signUp = createUserWithEmailAndPassword;
+export const auth = getAuth(app);

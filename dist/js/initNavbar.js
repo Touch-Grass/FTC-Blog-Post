@@ -1,11 +1,5 @@
-export const initNavbar = () => {
-    const navbarName = $('.navbar-username');
-    const fakeUsername = 'THIS IS A FAKE USERNAME';
+export const initNavbar = username => {
+  const navbarName = $('.navbar-username');
 
-    if ("userIsLoggedIn") {
-        navbarName.text(fakeUsername ?? 'Error');
-    } else {
-        navbarName.text('Not Signed In');
-        //This is a change
-    }
+  navbarName.text(username ?? 'Not Signed in');
 };

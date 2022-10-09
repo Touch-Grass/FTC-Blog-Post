@@ -1,21 +1,20 @@
 import { handleSignOut } from './signOut.js';
-import { handleSignIn, bypassSignIn } from './signIn.js';
+import { signIn, initSignIn, signOutAuth } from './signIn.js';
 import { initNavbar } from './initNavbar.js';
 import { handleSubmit } from './upload.js';
 
 $(() => {
   initNavbar();
-  const button = $('.add_blog_btn');
-  const signOut = $('.navbar-sign_out_btn');
   const loginForm = $('.login_form');
-  const loginBtn = $('.login_btn');
 
-  button.on('click', () => handleSubmit());
-  signOut.on('click', () => handleSignOut());
-  loginBtn.on('click', () => bypassSignIn());
+  $('.add_blog_btn').on('click', () => handleSubmit());
+  $('.navbar-sign_out_btn').on('click', () => signOutAuth());
+  // loginBtn.on('click', () => bypassSignIn());
 
-  loginForm.on('submit', e => {
+  initSignIn();
+
+  $('.login_btn').on('click', e => {
     e.preventDefault();
-    handleSignIn();
+    signIn($('#login_email').val().trim(), $('#login_password').val().trim());
   });
 });
