@@ -26,6 +26,10 @@
   border-radius: 5px;
 }
 
+.logged_in {
+  display: none;
+}
+
 .post_form_wrapper {
   display: flex;
   flex-direction: column;
@@ -45,6 +49,7 @@
 }
 .post_form_wrapper .input_wrapper .title_input {
   padding: 1rem;
+  width: 100%;
   background-color: #fff;
   color: rgb(82, 82, 82);
 }
