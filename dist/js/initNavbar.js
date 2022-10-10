@@ -1,5 +1,2 @@
-export const initNavbar = username => {
-  const navbarName = $('.navbar-username');
-
-  navbarName.text(username ?? 'Not Signed in');
-};
+export const initNavbar = username =>
+  $('.navbar-username').text(username ?? 'Not Signed in');

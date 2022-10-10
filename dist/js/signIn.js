@@ -7,37 +7,23 @@ import {
   onAuthStateChanged,
 } from 'https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js';
 
-// export const handleSignIn = (email, passw) => {
-//   console.log('Sign in');
-//   signInAuth();
-//   // Todo: Add firebase signing in an error catching.
-// };
-
 const signUpAuth = (email, password) => {
-  // Sign up with firebase auth
   createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
-      // Add user to the database
       const user = userCredential.user;
-      console.log(user);
     })
     .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
+      throw new Error(error.code, error.message);
     });
 };
 
 export const signOutAuth = () => {
   signOut(auth)
     .then(() => {
-      // Sign-out successful.
-      console.log('Sign out successful');
       location.reload();
     })
     .catch(error => {
-      // An error happened.
-      console.log('Sign out error', error);
+      throw new Error('Sign out failed', error);
     });
 };
 
@@ -55,12 +41,6 @@ export const initSignIn = () => {
 };
 
 export const signIn = (email, password) => {
-  console.log(
-    'Signing in with firebase! Email: ',
-    email,
-    ' Password: ',
-    password
-  );
   signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       const user = userCredential.user;
