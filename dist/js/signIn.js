@@ -44,14 +44,12 @@ export const signOutAuth = () => {
 export const initSignIn = () => {
   onAuthStateChanged(auth, user => {
     if (user) {
-      console.log('User is signed in');
       $('.not_logged_in').css('display', 'none');
       $('.logged_in').css('display', 'block');
       $('.navbar-sign_out_btn').removeClass('grayedOut');
       initNavbar(user.email);
     } else {
       $('.navbar_username').text('Not Signed In');
-      console.log('No user signed in');
     }
   });
 };
