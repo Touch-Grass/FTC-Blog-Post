@@ -33,17 +33,18 @@
 .post_form_wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  min-height: calc(100vh - 5rem);
+  min-height: 100vh;
   background-color: #E8EAEC;
 }
 .post_form_wrapper form {
   width: 80vw;
+  height: 100%;
   max-width: 992px;
 }
 .post_form_wrapper .input_wrapper {
-  margin-bottom: 2rem;
+  margin: 1.25rem 0;
   border-radius: 0.25rem;
   background-color: #fff;
 }
