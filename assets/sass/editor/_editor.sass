@@ -33,7 +33,7 @@
     .blog_content
         flex: 1
         width: 100%
-        padding: 1rem 0 0 0.5rem
+        padding: 1rem
         height: 100%
         border-radius: 0.25rem
         word-wrap: break-word
@@ -44,8 +44,52 @@
             color: $text-tint
 
     .add_blog_btn
-        @extend .template_btn
         margin-top: 1rem
 
+    .add_blog_btn,
+    .preview_blog_btn
+        margin-bottom: 1rem
+        @extend .template_btn
+
         &:active
-            transform: scale(1.2) !important
+            transform: scale(1.1)
+
+//  the editor preview window
+.preview
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background-color: $bg
+    z-index: 1000
+    overflow: auto
+    @include flex(space-evenly, center, column)
+
+    strong
+        font-weight: 600
+
+    em
+        font-style: italic
+
+    u
+        text-decoration: underline
+
+    h1, h2, h3, h4, h5, h6
+        font-weight: 600
+        margin: 1rem 0
+
+    h1
+        font-size: 2rem
+    h2
+        font-size: 1.8rem
+    h3
+        font-size: 1.6rem
+    h4
+        font-size: 1.4rem
+    h5
+        font-size: 1.2rem
+    h6
+        font-size: 1.1rem
+    .close_btn
+        @extend .template_btn

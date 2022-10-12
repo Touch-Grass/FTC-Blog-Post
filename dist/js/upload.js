@@ -27,28 +27,30 @@ export const handleSubmit = () => {
       return;
     }
 
-    $('.title_input').val('');
-    $('.blog_content').val('');
+    if (confirm('Are you sure you want to submit?')) {
+      $('.title_input').val('');
+      $('.blog_content').val('');
 
-    const postsRef = ref(db, 'posts');
-    const newPostRef = push(postsRef);
-    set(newPostRef, data).catch(e => {
+      const postsRef = ref(db, 'posts');
+      const newPostRef = push(postsRef);
+      set(newPostRef, data).catch(e => {
+        Toastify({
+          text: `${e}`,
+          duration: 5000,
+          style: {
+            background: 'linear-gradient(to right, #d90909, #db341d)',
+          },
+        }).showToast();
+      });
+
       Toastify({
-        text: `${e}`,
-        duration: 5000,
+        text: 'Successfly added a new blog!',
+        duration: 3500,
         style: {
-          background: 'linear-gradient(to right, #d90909, #db341d)',
+          background: 'linear-gradient(to right, #00b09b, #96c93d)',
         },
       }).showToast();
-    });
-
-    Toastify({
-      text: 'Successfly added a new blog!',
-      duration: 3500,
-      style: {
-        background: 'linear-gradient(to right, #00b09b, #96c93d)',
-      },
-    }).showToast();
+    }
   } catch (e) {
     Toastify({
       text: `${e}`,

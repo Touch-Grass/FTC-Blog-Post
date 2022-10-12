@@ -1,4 +1,5 @@
-.template_btn, .navbar-sign_out_btn, .post_form_wrapper .add_blog_btn, .not_logged_in button {
+.template_btn, .navbar-sign_out_btn, .post_form_wrapper .add_blog_btn,
+.post_form_wrapper .preview_blog_btn, .preview .close_btn, .not_logged_in button {
   background-color: #0ca6d1;
   cursor: pointer;
   border-radius: 5px;
@@ -67,7 +68,7 @@
 .post_form_wrapper .blog_content {
   flex: 1;
   width: 100%;
-  padding: 1rem 0 0 0.5rem;
+  padding: 1rem;
   height: 100%;
   border-radius: 0.25rem;
   word-wrap: break-word;
@@ -86,10 +87,60 @@
 .post_form_wrapper .add_blog_btn {
   margin-top: 1rem;
 }
-.post_form_wrapper .add_blog_btn:active {
-  transform: scale(1.2) !important;
+.post_form_wrapper .add_blog_btn,
+.post_form_wrapper .preview_blog_btn {
+  margin-bottom: 1rem;
+}
+.post_form_wrapper .add_blog_btn:active,
+.post_form_wrapper .preview_blog_btn:active {
+  transform: scale(1.1);
 }
 
+.preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #E8EAEC;
+  z-index: 1000;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.preview strong {
+  font-weight: 600;
+}
+.preview em {
+  font-style: italic;
+}
+.preview u {
+  text-decoration: underline;
+}
+.preview h1, .preview h2, .preview h3, .preview h4, .preview h5, .preview h6 {
+  font-weight: 600;
+  margin: 1rem 0;
+}
+.preview h1 {
+  font-size: 2rem;
+}
+.preview h2 {
+  font-size: 1.8rem;
+}
+.preview h3 {
+  font-size: 1.6rem;
+}
+.preview h4 {
+  font-size: 1.4rem;
+}
+.preview h5 {
+  font-size: 1.2rem;
+}
+.preview h6 {
+  font-size: 1.1rem;
+}
 .navbar {
   display: flex;
   flex-direction: row;
