@@ -16,9 +16,6 @@ export const handleSubmit = () => {
       time: `${month}/${day}/${year}`,
     };
 
-    $('.title_input').val('');
-    $('.blog_content').val('');
-
     if (data.title === '' || data.description === '') {
       Toastify({
         text: 'Please fill in all the fields',
@@ -29,6 +26,9 @@ export const handleSubmit = () => {
       }).showToast();
       return;
     }
+
+    $('.title_input').val('');
+    $('.blog_content').val('');
 
     const postsRef = ref(db, 'posts');
     const newPostRef = push(postsRef);
