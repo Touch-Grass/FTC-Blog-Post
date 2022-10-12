@@ -14,7 +14,6 @@ export const handleSubmit = () => {
       title: $('.title_input').val(),
       description: marked.parse($('.blog_content').val()),
       time: `${month}/${day}/${year}`,
-      account: `${user.email}`,
     };
 
     $('.title_input').val('');
