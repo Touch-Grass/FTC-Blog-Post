@@ -27,8 +27,25 @@
   border-radius: 5px;
 }
 
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: #E8EAEC;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #0ca6d1;
+  border-radius: 3px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #096788;
+}
+*::-webkit-scrollbar-track {
+  background-color: #E8EAEC;
+  border-radius: 10px;
+}
+
 .logged_in {
-  display: none;
+  display: non;
 }
 
 .post_form_wrapper {
@@ -207,6 +224,7 @@ meter {
 
 body {
   font-family: "JetBrains Mono", monospace;
+  overflow-x: hidden;
 }
 
 ::-moz-placeholder {
